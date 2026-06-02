@@ -10,7 +10,7 @@ function Patients() {
 
   const loadPatients = () => {
     axios
-      .get("http://127.0.0.1:5000/patients")
+      .get("https://hospital-management-1-jwe2.onrender.com/patients")
       .then((res) => {
         setPatients(res.data);
       })
@@ -27,7 +27,7 @@ function Patients() {
     if (editId !== null) {
       axios
   .put(
-    `http://127.0.0.1:5000/patients/${editId}`,
+    `https://hospital-management-1-jwe2.onrender.com/patients/${editId}`,
     {
       name,
       disease
@@ -51,7 +51,7 @@ function Patients() {
 
       axios
         .post(
-          "http://127.0.0.1:5000/patients",
+          "https://hospital-management-1-jwe2.onrender.com/patients",
           newPatient
         )
         .then(() => {
@@ -65,7 +65,7 @@ function Patients() {
 
   const deletePatient = (id) => {
     axios
-      .delete(`http://127.0.0.1:5000/patients/${id}`)
+      axios.delete(`https://hospital-management-1-jwe2.onrender.com/patients/${id}`)
       .then(() => {
         loadPatients();
       });

@@ -10,7 +10,7 @@ const [editId, setEditId] = useState(null);
 
 const fetchDoctors = () => {
 axios
-.get("http://127.0.0.1:5000/doctors")
+.get("https://hospital-management-1-jwe2.onrender.com/doctors")
 .then((res) => {
 setDoctors(res.data);
 })
@@ -26,7 +26,7 @@ fetchDoctors();
 const addDoctor = () => {
 if (editId !== null) {
 axios
-.put(`http://127.0.0.1:5000/doctors/${editId}`, {
+.put(`https://hospital-management-1-jwe2.onrender.com/doctors/${editId}`), {
 name,
 specialization
 })
@@ -43,9 +43,8 @@ name,
 specialization
 };
 
-
   axios
-    .post("http://127.0.0.1:5000/doctors", newDoctor)
+    .post("https://hospital-management-1-jwe2.onrender.com/doctors", newDoctor)
     .then(() => {
       fetchDoctors();
       setName("");
@@ -58,7 +57,7 @@ specialization
 
 const deleteDoctor = (id) => {
 axios
-.delete(`http://127.0.0.1:5000/doctors/${id}`)
+.delete(`https://hospital-management-1-jwe2.onrender.com/doctors/${id}`)
 .then(() => {
 fetchDoctors();
 });
