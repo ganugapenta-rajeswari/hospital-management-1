@@ -26,7 +26,7 @@ fetchDoctors();
 const addDoctor = () => {
 if (editId !== null) {
 axios
-.put(`https://hospital-management-1-jwe2.onrender.com/doctors/${editId}`), {
+.put(`https://hospital-management-1-jwe2.onrender.com/doctors/${editId}`, {
 name,
 specialization
 })
